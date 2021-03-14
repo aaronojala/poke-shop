@@ -15,27 +15,36 @@ const Pokemon = () => {
     return (
       <>
         <main className="pokemon">
-          <input type="text" placeholder="Search" onChange={handleChange} />
+					
           <ul>
+          <input type="text" placeholder="Search" onChange={handleChange} />
             {pokemon
               .filter((item) =>
                 item.title.toLowerCase().includes(keyword.toLowerCase())
               )
               .map((pokemon) => (
+								
                 <li key={pokemon.id}>
-                  <div>
+                  
                     <p>
-                      <strong>{pokemon.title} </strong>
-											{pokemon.desc}
+                      <h2>{pokemon.title}</h2>
                   	</p>
-									 €{pokemon.price}
-                  </div>
-										<button onClick={() => dispatch(addPokemon(pokemon))}>
+										<p>
+											Element type: {pokemon.desc}
+										</p>
+										<p>
+									 		€{pokemon.price}
+										</p>
+										<a>                
+										<button class="btn btn-blue"onClick={() => dispatch(addPokemon(pokemon))}>
 											Add to Cart
 										</button>
+										</a>  
                 </li>
+								
             	))}
           </ul>
+					
         </main>
       </>
     )

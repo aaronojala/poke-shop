@@ -6,6 +6,7 @@ import Cart from './pages/Cart';
 import Navigation from './components/Navigation';
 import Pokemon from './pages/Pokemon';
 import { useSelector } from 'react-redux';
+import './App.scss';
 
 const App = () => {
   const cartItemCount = useSelector((state) =>

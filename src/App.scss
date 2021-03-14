@@ -1,0 +1,135 @@
+@import 'variables';
+@import 'functions';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://source.unsplash.com/DypO_XgAE4Y') no-repeat fixed center center/cover;
+    font-family: $font;
+}
+
+%btn-shared {
+    padding: 10px;
+        border-style: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        font-family: $font;
+        font-weight: bold;
+        color: $light-color;  
+}
+
+// navigation
+
+header {
+    background: $dark-color;
+    padding: 1rem;
+}
+
+nav {
+    ul{
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+    }
+    a{
+        display: block;
+        color: $light-color;
+        text-decoration: none;
+        padding: 1rem;
+        font-size: 1.5rem;
+        &:hover {
+            color: #d5d5d7;
+            @include transition(all 1s ease)
+        }
+    }
+}
+
+// Home
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    h1{
+        padding: 1rem;
+        border-radius: 5px;
+        font-size: 3rem;
+        background-color: $home-color;
+        color: $light-color;
+    }
+}
+
+// Pokemon
+
+.pokemon,
+.cart{
+    margin-top: 2rem;
+    ul {        
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+        list-style: none;
+    }
+    input {
+        height: 50px;
+        font-family: $font;
+        font-size: 2rem;
+        border-radius: 5px;
+        border-style: none;
+        margin: 0 1rem;
+        grid-column: 1/4;
+        background-color: $card-bg;      
+        &::placeholder{
+            color: $dark-color;
+            text-align: center;
+        }
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem;
+        background-color: $card-bg;
+        height: 200px;
+        line-height: 2;     
+    }
+    .btn{
+        &-blue{
+            @extend %btn-shared;
+            background-color: $btn-color;
+            &:focus {
+                background-color: lighten($btn-color, 20%);
+            } 
+        }
+        &-red{
+            @extend %btn-shared;
+            background-color: $btn-color-rmv;
+            &:focus {
+                background-color: lighten($btn-color-rmv, 20%);
+            } 
+        }
+    }
+}
+
+// cart
+
+.cart {
+    text-align: center;
+    margin-top: 5rem;
+    .title {
+    padding: 1rem;
+    background-color: $card-bg;
+    color: $dark-color;
+    margin: 0 20rem;
+    }
+}
+    
