@@ -35,7 +35,7 @@ const Pokemon = () => {
 										<p>
 									 		€{pokemon.price}
 										</p>
-										<a>                
+										<a href="/#">                
 										<button class="btn btn-blue"onClick={() => dispatch(addPokemon(pokemon))}>
 											Add to Cart
 										</button>
